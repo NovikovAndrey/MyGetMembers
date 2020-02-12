@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Reflection;
 
 namespace MyGetMembers
 {
@@ -6,7 +7,13 @@ namespace MyGetMembers
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Type myType = Type.GetType("MyGetMembers.User", false, true);
+            foreach(MemberInfo mi in myType.GetMembers())
+            {
+                Console.WriteLine($"{mi.DeclaringType} {mi.MemberType} {mi.Name}");
+            }
+            Console.ReadKey();
         }
+
     }
 }
