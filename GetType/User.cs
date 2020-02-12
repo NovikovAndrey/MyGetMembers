@@ -1,12 +1,14 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-namespace Users
+namespace GetType
 {
-    public class Class1
+    class User
     {
         public string Name { get; set; }
         public int Age { get; set; }
-        public void User(string n, int a)
+        public User(string n, int a)
         {
             Name = n;
             Age = a;
