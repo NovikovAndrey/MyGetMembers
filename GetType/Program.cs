@@ -9,16 +9,21 @@ namespace GetType
         {
             
             Type myType = Type.GetType("GetType.User", false, true);
-            Console.WriteLine("Fields");
-            foreach (FieldInfo fieldInfo in myType.GetFields())
+            Console.WriteLine("Interfaces");
+            foreach(Type type in myType.GetInterfaces())
             {
-                Console.WriteLine($"{fieldInfo.FieldType} {fieldInfo.Name}");
+                Console.WriteLine($"{type.Name}");
             }
-            Console.WriteLine("Properties");
-            foreach(PropertyInfo propertyInfo in myType.GetProperties())
-            {
-                Console.WriteLine($"{propertyInfo.PropertyType} {propertyInfo.Name}");
-            }
+            //Console.WriteLine("Fields");
+            //foreach (FieldInfo fieldInfo in myType.GetFields())
+            //{
+            //    Console.WriteLine($"{fieldInfo.FieldType} {fieldInfo.Name}");
+            //}
+            //Console.WriteLine("Properties");
+            //foreach(PropertyInfo propertyInfo in myType.GetProperties())
+            //{
+            //    Console.WriteLine($"{propertyInfo.PropertyType} {propertyInfo.Name}");
+            //}
             //Console.WriteLine("Constr");
             //foreach (ConstructorInfo constructorInfo in myType.GetConstructors())
             //{
